@@ -1,6 +1,6 @@
 # gameoflife
 
-To install dependencies:
+a playground for famous https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life
 
 ```bash
 bun install
@@ -9,7 +9,5 @@ bun install
 To run:
 
 ```bash
-bun run index.ts
+bun test
 ```
-
-This project was created using `bun init` in bun v1.1.20. [Bun](https://bun.sh) is a fast all-in-one JavaScript runtime.

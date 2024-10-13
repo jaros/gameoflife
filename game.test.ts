@@ -29,3 +29,25 @@ test("overpopulation", () => {
         [1, 1, 1]
     ], 1, 1)).toBe(0);
 });
+
+test("dead to live with exactly 3 live neighbors", () => {
+    expect(getCellState([
+        [0, 1, 1],
+        [1, 1, 1],
+        [1, 1, 1]
+    ], 0, 0)).toBe(1);
+
+    expect(getCellState([
+        [0, 0, 0],
+        [0, 0, 1],
+        [0, 1, 1]
+    ], 1, 1)).toBe(1);
+});
+
+test("dead to dead with only 2 live neighbors", () => {
+    expect(getCellState([
+        [0, 0, 0],
+        [0, 0, 1],
+        [0, 0, 1]
+    ], 1, 1)).toBe(0);
+});

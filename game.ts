@@ -9,6 +9,7 @@ const neighbors = [
 
 export function getCellState(grid: number[][], x: number, y: number): number {
     let count = 0;
+    const currentState = grid[y][x];
     for (let [dy, dx] of neighbors) {
         let ny = dy + y;
         let nx = dx + x;
@@ -16,5 +17,8 @@ export function getCellState(grid: number[][], x: number, y: number): number {
             count++;
         }
     }
-    return count >= 2 && count <= 3 ? 1 : 0;
+    if (currentState === 1) {
+        return count >= 2 && count <= 3 ? 1 : 0;
+    }
+    return count === 3 ? 1 : 0; 
 }
